@@ -1,0 +1,41 @@
+<div class="estoqueP">
+<input type="button" value="Novo Produto" class="btn btn-dark"  (click)="adicionar(abc)">
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th colspan="2">#ID</th>
+        <th colspan="5">Produto:</th>
+        <th colspan="5">Preço Uni. :</th>
+        <th colspan="5">Ações:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="baixo" *ngFor = "let estoqueProd of lista; let i = index">
+        <th scope="row">{{estoqueProd.id}}</th>
+       <th>{{estoqueProd.nomeProduto}}</th>
+       <th>{{estoqueProd.precoProdutos}}</th>
+        <th colspan="4">
+            <input type="button" value="Editar" class="btn btn-warning" (click)="editar(abc, estoqueProd, i)">
+                </th>
+                <th colspan="4">
+            <input type="button" value="Excluir" class="btn btn-danger" (click)="excluir(estoqueProd.id)">
+            </th>
+      </tr>
+    </tbody>
+  </table>
+  
+<ng-template #abc let-modal>
+	<div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-estoque-proddetails [estoqueProd]="estoqueProdSelecionadoParaEdicao" (retorno)="addOuEditaEstoqueProd($event)" ></app-estoque-proddetails>
+            
+	</div>
+	<div class="modal-footer">
+	</div>
+</ng-template>
+</div>

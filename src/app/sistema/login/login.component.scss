@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.divLogin{
+    text-align: center; /* Centraliza o texto dentro do container */
+    background-color: #000879;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: #D50000;
+    margin: 0;
+    padding: 0;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+}
+p{
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+}
+.inputMod{
+    border: underline;
+    border-radius: 8px;
+    font-size: 2rem;
+    color: #000879;
+}
+#senhaInput{
+    padding-top: 3rem;
+}
+.cadastrar{
+    font-size: 1.3rem;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+}
+
+form{
+    color:#000879;
+    background-color: white;
+    width: 40vw;
+    height: 90vh;
+    border-radius: 20px;
+}
+
+#botao{
+        font-size: 2rem;
+        padding: 0.2% 5%;
+}

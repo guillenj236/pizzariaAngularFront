@@ -1,0 +1,33 @@
+.HeaderClass{
+    width: auto;
+    background-color: #020c84;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 07%;
+    padding: 2rem;
+    margin-bottom: 30px;
+    height: 14vh;
+}
+
+.img{
+    height: 18rem;
+    margin-top: 5vh;
+    cursor: pointer;
+}
+.imgDois{
+    height: 4.5rem;
+    border-color: white;
+    border-style:dashed;
+    border-radius: 10rem;
+    background-color: white;
+}
+.imgDois:hover{
+    height: 5rem;
+    transition: 1s;
+    cursor: pointer;
+}
+
+input{
+    font-size: 1.5rem;
+}

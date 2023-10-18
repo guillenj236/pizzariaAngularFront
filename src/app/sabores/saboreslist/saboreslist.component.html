@@ -1,0 +1,35 @@
+<div class="divSabor">
+<input type="button" value="Novo Sabor!" class="btn btn-info" id="botaoNovo" (click)="adicionar(abc)">
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th  colspan="2">#ID</th>
+        <th  colspan="5">Nome Sabor:</th>
+        <th colspan="5">Ações:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="baixo" *ngFor = "let sabores of lista; let i = index">
+        <th scope="row">{{sabores.id}}</th>
+       <th>{{sabores.saborPizza}}</th>
+        <th colspan="4">
+            <input type="button" value="Editar" class="btn btn-warning" (click)="editar(abc, sabores, i)">
+                </th>
+                <th colspan="4">
+            <input type="button" value="Excluir" class="btn btn-danger" (click)="excluir(sabores.id)">
+                </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #abc let-modal>
+    <div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <app-saboresdetails [sabores]="saborSelecionadoParaEdicao" (retorno)="addOuEitarSabores($event)"></app-saboresdetails>
+    </div>
+  </ng-template>
+</div>
