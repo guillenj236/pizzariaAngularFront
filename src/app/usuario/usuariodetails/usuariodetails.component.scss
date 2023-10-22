@@ -1,0 +1,29 @@
+p{
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    color: white;
+
+}
+h1{
+    font-weight: 900;
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.usuarioDetailsClass{
+    text-align: center; /* Centraliza o texto dentro do container */
+    padding: 20px;
+    background-color: #020c84;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#inputBotao{
+    font-size: 2rem;
+}

@@ -1,0 +1,36 @@
+<div class="divFuncionario">
+<input type="button" value="Novo Funcionário" class="btn btn-info" id="botaoNovo" (click)="adicionar(abc)">
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Nome Funcionário(a)</th>
+            <th>Ações:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="baixo" *ngFor = "let funcionario of lista; let i = index">
+            <th scope="row">{{funcionario.id}}</th>
+            <th>{{funcionario.nomeFunc}}</th>
+            <th>
+                <input type="button" value="Editar" class="btn btn-warning" (click)="editar(abc, funcionario, i)">
+            </th>
+            <th>
+                <input type="button" value="Excluir" class="btn btn-danger" (click)="excluir(funcionario.id)">
+            </th>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #abc let-modal>
+    <div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <app-funcionariodetails [funcionario]="funcionarioSelecionadoParaEdicao" (retorno)="addOuEditaFuncionario($event)"></app-funcionariodetails>
+    </div>
+  </ng-template>
+
+</div>

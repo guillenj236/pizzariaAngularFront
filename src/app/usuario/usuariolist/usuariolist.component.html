@@ -1,0 +1,48 @@
+<div class="divUsuario">
+    <input type="button" value="Novo Usuário" class="btn btn-info" id="botaoNovo" (click)="adicionar(abc)">
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th >#ID</th>
+                <th >Usuário</th>
+                <th >Telefone</th>
+                <th >Bairro</th>
+                <th >Rua</th>
+                <th >Num. Res.</th>
+                <th >Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="baixo" *ngFor="let usuario of lista; let i = index">
+                <th scope="row">{{usuario.id}}</th>
+                <th >{{usuario.nomeUsuario}}</th>
+                <th >{{usuario.telefone}}</th>
+                <td><ul>
+                        <li class="baixoDois" *ngFor="let endereco of usuario.enderecos; let i = index">
+                            <th >{{endereco.bairro}}</th>
+                            <th >{{endereco.rua}}</th>
+                            <th >{{endereco.numeroEnd}}</th>
+                        </li>
+                    </ul>
+                </td>
+                <th colspan="1">
+                    <input type="button" value="Editar" class="btn btn-warning" (click)="editar(abc, usuario, i)">
+                </th>
+                <th colspan="1">
+                    <input type="button" value="Excluir" class="btn btn-danger" (click)="excluir(usuario.id)">
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #abc let-modal>
+        <div class="modal-header">
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Crossl click')"></button>
+        </div>
+        <div class="modal-body">
+            <app-usuariodetails [usuario]="usuarioSelecionadoParaEdicao" (retorno)="addOuEditaUsuario($event)"></app-usuariodetails>
+        </div>
+    </ng-template>
+</div>

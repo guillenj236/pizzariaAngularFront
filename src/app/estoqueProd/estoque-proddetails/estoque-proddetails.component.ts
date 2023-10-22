@@ -17,15 +17,27 @@ export class EstoqueProddetailsComponent {
   constructor(){}
 
   salvar(){
-    this.estoqueProdService.save(this.estoqueProd).subscribe({
-      next: estoqueProd => {
-        this.retorno.emit(estoqueProd);
-      },
-      error: erro => {
-        alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
-        console.error(erro);
-      }
-    });
+    if(this.estoqueProd.id > 0){
+      this.estoqueProdService.update(this.estoqueProd).subscribe({
+        next: estoqueProd => {
+          this.retorno.emit(estoqueProd);
+        },
+        error: erro => {
+          alert('Erro!! verificar no console!!');
+          console.error(erro);
+        }
+      });
+    }else{
+      this.estoqueProdService.save(this.estoqueProd).subscribe({
+        next: estoqueProd => {
+            this.retorno.emit(estoqueProd);
+        },
+        error: erro => {
+          alert('Erro!! verificar no console!!');
+          console.error(erro);
+        }
+      });
+    }
   }
   deletar(){
     this.estoqueProdService.delete(this.estoqueProd.id).subscribe({

@@ -20,6 +20,9 @@ export class EstoqueProdService {
   save(estoqueProd: EstoqueProd): Observable<EstoqueProd>{
     return this.http.post<EstoqueProd>(this.API, estoqueProd);
   }
+  update(estoqueProd: EstoqueProd): Observable<EstoqueProd>{
+    return this.http.put<EstoqueProd>(this.API, estoqueProd);
+  }
   delete(id: number): Observable<any>{
     let params = new HttpParams()
     .set('id', id.toString());

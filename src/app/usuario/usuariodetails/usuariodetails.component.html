@@ -1,0 +1,24 @@
+<div class="usuarioDetailsClass">
+<h1>Adicione um novo Usuário!! 🐧</h1>
+<br>
+<br>
+<br>
+<p>Digite o nome do Usuário:</p>
+<input type="text" name="UserInput" id="inputNomeUser" placeholder="Nome Usuário" [(ngModel)]="usuario.nomeUsuario">
+<br>
+<p>Digite o Telefone do Usuário:</p>
+<input type="text" name="TelInput" id="inputTelUser" placeholder="Telefone" [(ngModel)]="usuario.telefone">
+<br>
+<br>
+<p id="tituloEnd">=== Campos de Endereço ===</p>
+<br>
+<p>Digite o Número da residência:</p>
+<input type="number" name="NumImput" id="inputNum" placeholder="Número" [(ngModel)]="novoEndereco.numeroEnd">
+<p>Digite a Rua:</p>
+<input type="text" name="RuaInput" id="inputRua" placeholder="Rua" [(ngModel)]="novoEndereco.rua">
+<p>Digite o nome do Bairro:</p>
+<input type="text" name="BairroInput" id="inputBairro" placeholder="Bairro" [(ngModel)]="novoEndereco.bairro">
+<br>
+<br>
+<input type="button" value="Adicionar" class="btn btn-dark" id="inputBotao" (click)="salvar()" >
+</div>

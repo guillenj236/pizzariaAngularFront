@@ -6,6 +6,13 @@ import { SaboreslistComponent } from './sabores/saboreslist/saboreslist.componen
 import { SaboresdetailsComponent } from './sabores/saboresdetails/saboresdetails.component';
 import { EstoquProdlistComponent } from './estoqueProd/estoqu-prodlist/estoqu-prodlist.component';
 import { EstoqueProddetailsComponent } from './estoqueProd/estoque-proddetails/estoque-proddetails.component';
+import { CadLoginComponent } from './sistema/cad-login/cad-login.component';
+import { FuncionariolistComponent } from './funcionario/funcionariolist/funcionariolist.component';
+import { FuncionariodetailsComponent } from './funcionario/funcionariodetails/funcionariodetails.component';
+import { UsuariolistComponent } from './usuario/usuariolist/usuariolist.component';
+import { UsuariodetailsComponent } from './usuario/usuariodetails/usuariodetails.component';
+import { PizzalistComponent } from './pizza/pizzalist/pizzalist.component';
+import { PizzadetailsComponent } from './pizza/pizzadetails/pizzadetails.component';
 
 const routes: Routes = [
   { path:"", redirectTo: "login", pathMatch: 'full' },
@@ -14,9 +21,16 @@ const routes: Routes = [
     {path: "sabores", component:SaboreslistComponent},
     {path:"sabores/novo", component:SaboresdetailsComponent},
     {path: "estoqueProd", component:EstoquProdlistComponent},
-    {path: "estoqueProd/novo", component: EstoqueProddetailsComponent}
+    {path: "estoqueProd/novo", component: EstoqueProddetailsComponent},
+    {path: "funcionarios", component: FuncionariolistComponent},
+    {path: "funcionarios/novo", component: FuncionariodetailsComponent},
+    {path: "usuarios", component:UsuariolistComponent},
+    {path: "usuarios/novo", component:UsuariodetailsComponent},
+    {path: "pizzas", component:PizzalistComponent},
+    {path: "pizzas/novo", component:PizzadetailsComponent}
   ]
-}
+},
+{path:"cadLogin", component: CadLoginComponent}
 ];
 
 @NgModule({
