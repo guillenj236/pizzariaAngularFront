@@ -22,6 +22,10 @@ import { EnderecolistComponent } from './endereco/enderecolist/enderecolist.comp
 import { EnderecodetailsComponent } from './endereco/enderecodetails/enderecodetails.component';
 import { PizzalistComponent } from './pizza/pizzalist/pizzalist.component';
 import { PizzadetailsComponent } from './pizza/pizzadetails/pizzadetails.component';
+import { ProdutosdetailsComponent } from './produtos/produtosdetails/produtosdetails.component';
+import { ProdutoslistComponent } from './produtos/produtoslist/produtoslist.component';
+import { PedidolistComponent } from './pedido/pedidolist/pedidolist.component';
+import { PedidodetailsComponent } from './pedido/pedidodetails/pedidodetails.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { PizzadetailsComponent } from './pizza/pizzadetails/pizzadetails.compone
     EnderecodetailsComponent,
     PizzalistComponent,
     PizzadetailsComponent,
+    ProdutosdetailsComponent,
+    ProdutoslistComponent,
+    PedidolistComponent,
+    PedidodetailsComponent,
   
     
   ],

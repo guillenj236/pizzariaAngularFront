@@ -5,6 +5,6 @@ export class Pizza{
     id!: number;
     sabores?: Sabores[] = [];
     precoPizza!: number;
-    qantidadePizza?: number;
+    quantidadePizza?: number;
     tamanho!: Tamanho;
 }

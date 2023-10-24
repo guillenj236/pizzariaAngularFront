@@ -13,6 +13,10 @@ import { UsuariolistComponent } from './usuario/usuariolist/usuariolist.componen
 import { UsuariodetailsComponent } from './usuario/usuariodetails/usuariodetails.component';
 import { PizzalistComponent } from './pizza/pizzalist/pizzalist.component';
 import { PizzadetailsComponent } from './pizza/pizzadetails/pizzadetails.component';
+import { ProdutoslistComponent } from './produtos/produtoslist/produtoslist.component';
+import { ProdutosdetailsComponent } from './produtos/produtosdetails/produtosdetails.component';
+import { PedidolistComponent } from './pedido/pedidolist/pedidolist.component';
+import { PedidodetailsComponent } from './pedido/pedidodetails/pedidodetails.component';
 
 const routes: Routes = [
   { path:"", redirectTo: "login", pathMatch: 'full' },
@@ -27,7 +31,11 @@ const routes: Routes = [
     {path: "usuarios", component:UsuariolistComponent},
     {path: "usuarios/novo", component:UsuariodetailsComponent},
     {path: "pizzas", component:PizzalistComponent},
-    {path: "pizzas/novo", component:PizzadetailsComponent}
+    {path: "pizzas/novo", component:PizzadetailsComponent},
+    {path: "produtos", component:ProdutoslistComponent},
+    {path: "produtos/novo", component:ProdutosdetailsComponent},
+    {path: "pedidos", component:PedidolistComponent},
+    {path: "pedidos/novo", component:PedidodetailsComponent}
   ]
 },
 {path:"cadLogin", component: CadLoginComponent}

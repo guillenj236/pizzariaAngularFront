@@ -19,14 +19,14 @@
                 <th scope="row">{{usuario.id}}</th>
                 <th >{{usuario.nomeUsuario}}</th>
                 <th >{{usuario.telefone}}</th>
-                <td><ul>
+                <th><ul>
                         <li class="baixoDois" *ngFor="let endereco of usuario.enderecos; let i = index">
                             <th >{{endereco.bairro}}</th>
                             <th >{{endereco.rua}}</th>
                             <th >{{endereco.numeroEnd}}</th>
                         </li>
                     </ul>
-                </td>
+                </th>
                 <th colspan="1">
                     <input type="button" value="Editar" class="btn btn-warning" (click)="editar(abc, usuario, i)">
                 </th>
