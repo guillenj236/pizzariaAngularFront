@@ -30,6 +30,7 @@ export class PizzadetailsComponent {
       this.pizzaService.update(this.pizza).subscribe({
         next: pizza => {
             this.retorno.emit(this.pizza);
+            alert('Pizza Editada!!');
         },
         error: erro => {
           alert('Error!! verificar no console!!');
@@ -40,6 +41,7 @@ export class PizzadetailsComponent {
       this.pizzaService.save(this.pizza).subscribe({
         next: pizza => {
           this.retorno.emit(pizza);
+          alert('Pizza Cadastrada!!');
         },
         error: erro => {
           alert('Erro!! verificar no console!!');

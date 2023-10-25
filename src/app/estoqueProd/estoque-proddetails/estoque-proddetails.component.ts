@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { EstoqueProd } from '../estoqueProd';
+import { EstoqueProds } from '../estoqueProds';
 import { EstoqueProdService } from 'src/app/service/estoque-prod.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { EstoqueProdService } from 'src/app/service/estoque-prod.service';
 })
 export class EstoqueProddetailsComponent {
 
-  @Input() estoqueProd: EstoqueProd = new EstoqueProd();
-  @Output() retorno = new EventEmitter<EstoqueProd>();
+  @Input() estoqueProd: EstoqueProds = new EstoqueProds();
+  @Output() retorno = new EventEmitter<EstoqueProds>();
 
   estoqueProdService = inject(EstoqueProdService);
 

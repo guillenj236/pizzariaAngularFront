@@ -2,6 +2,13 @@
     <h1>Adicione um Produto ao Pedido!! 🧃</h1>
     <br>
     <br>
+    <label for="estoqueProd">Produtos:</label>
+    <select name="estoqueProd" id="estoqueProd" [(ngModel)]="produtos.estoqueProds.id">
+        <option value="" disabled selected>Escolha um Produto</option>
+        <option *ngFor="let estoqueProd of estoqueProdLista"  [value]="estoqueProd.id">{{estoqueProd.nomeProduto}}</option>
+    </select>
+    <br>
+    <br>
     <p>Digite a quantidade do Produto a ser adicionada:</p>
     <input type="number" name="quantidadeProd" id="qtProd" placeholder="Quantidade" [(ngModel)]="produtos.quantidadeprod">
     <br>

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EstoqueProd } from '../estoqueProd/estoqueProd';
+import { EstoqueProds } from '../estoqueProd/estoqueProds';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,14 @@ export class EstoqueProdService {
 
   constructor() { }
 
-  listAll():  Observable<EstoqueProd[]>{
-    return this.http.get<EstoqueProd[]>(this.API);
+  listAll():  Observable<EstoqueProds[]>{
+    return this.http.get<EstoqueProds[]>(this.API);
   }
-  save(estoqueProd: EstoqueProd): Observable<EstoqueProd>{
-    return this.http.post<EstoqueProd>(this.API, estoqueProd);
+  save(estoqueProd: EstoqueProds): Observable<EstoqueProds>{
+    return this.http.post<EstoqueProds>(this.API, estoqueProd);
   }
-  update(estoqueProd: EstoqueProd): Observable<EstoqueProd>{
-    return this.http.put<EstoqueProd>(this.API, estoqueProd);
+  update(estoqueProd: EstoqueProds): Observable<EstoqueProds>{
+    return this.http.put<EstoqueProds>(this.API, estoqueProd);
   }
   delete(id: number): Observable<any>{
     let params = new HttpParams()

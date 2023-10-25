@@ -1,0 +1,48 @@
+h1{
+    font-weight: 900;
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+p{
+    font-weight: 700;
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    color: white;
+
+}
+.pizzaDetailsClass{
+    text-align: center; /* Centraliza o texto dentro do container */
+    padding: 20px;
+    background-color: #020c84;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#tamanho{
+    background-color: white;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+label{
+    font-size: 2rem;
+    color: white;
+}
+#qtPizza{
+    font-size: 1.3rem;
+    border-radius: 8px;
+}
+#inputBotao{
+    font-size: 2rem;
+}
+#sabores{
+    margin-left: 2rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+}

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { EstoqueProd } from '../estoqueProd';
+import { EstoqueProds } from '../estoqueProds';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EstoqueProdService } from 'src/app/service/estoque-prod.service';
 
@@ -9,9 +9,9 @@ import { EstoqueProdService } from 'src/app/service/estoque-prod.service';
   styleUrls: ['./estoqu-prodlist.component.scss']
 })
 export class EstoquProdlistComponent {
-    lista: EstoqueProd[]= [];
+    lista: EstoqueProds[]= [];
 
-    estoqueProdSelecionadoParaEdicao: EstoqueProd = new EstoqueProd();
+    estoqueProdSelecionadoParaEdicao: EstoqueProds = new EstoqueProds();
     indiceSelecionadoParaEdicao!: number;
     
     modalService = inject(NgbModal);
@@ -33,16 +33,16 @@ export class EstoquProdlistComponent {
       });
     }
     adicionar(modal: any) {
-      this.estoqueProdSelecionadoParaEdicao = new EstoqueProd();
+      this.estoqueProdSelecionadoParaEdicao = new EstoqueProds();
       this.modalService.open(modal, {size: 'lg'});
     }
-    editar(modal: any, estoqueProd: EstoqueProd, indice: number){
+    editar(modal: any, estoqueProd: EstoqueProds, indice: number){
         this.estoqueProdSelecionadoParaEdicao = Object.assign({}, estoqueProd);//clonando o objeto se for edição...
         this.indiceSelecionadoParaEdicao = indice;
 
         this.modalService.open(modal, { size: 'lg' });
     }
-    addOuEditaEstoqueProd(estoqueProd: EstoqueProd){
+    addOuEditaEstoqueProd(estoqueProd: EstoqueProds){
         this.listAll();
         this.modalService.dismissAll();
     }

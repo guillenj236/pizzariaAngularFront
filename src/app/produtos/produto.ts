@@ -1,9 +1,8 @@
-import { EstoqueProd } from "../estoqueProd/estoqueProd";
+import { EstoqueProds } from "../estoqueProd/estoqueProds";
 
 export class Produtos{
     id!: number;
     quantidadeprod!: number;
     totalprod!: number;
-
-    estoqueProds?: EstoqueProd [] = [];
+    estoqueProds: EstoqueProds = new EstoqueProds;
 }
