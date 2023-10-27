@@ -8,14 +8,14 @@ export class Pedido{
     id!: number;
     entrega?: boolean;
     status?: Status;
-    pizza: Pizza [] = [];
+    pizzas: Pizza[] = [];
     produtos: Produtos [] = [];
     pedidopreco!: number;
     pagamentoCartao?: boolean;
     pagamentoDinheiro?: boolean;
-    funcionario!: Funcionario;
+    funcionario: Funcionario = new Funcionario;
     observacao?: string;
-    usuario?: Usuario;
+    usuario: Usuario = new Usuario;
     delivery?: boolean;
     dataPedido?: Date;
 }

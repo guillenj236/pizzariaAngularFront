@@ -3,7 +3,7 @@ import { Sabores } from "../sabores/sabores"
 
 export class Pizza{
     id!: number;
-    sabores?: Sabores[] = [];
+    sabores: Sabores[] = [];
     precoPizza!: number;
     quantidadePizza?: number;
     tamanho!: Tamanho;

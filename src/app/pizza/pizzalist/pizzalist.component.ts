@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Pizza } from '../pizza';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { PizzaService } from 'src/app/service/pizza.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class PizzalistComponent {
 
   modalService = inject(NgbModal);
   pizzaService = inject(PizzaService);
+  modalRef!: NgbModalRef;
 
   constructor(){
     this.listAll();
