@@ -2,7 +2,7 @@ import { Endereco } from "../endereco/endereco";
 
 export class Usuario{
     id!: number;
-    nomeUsuarioO!: string;
+    nomeUsuario!: string;
     telefone!: string;
     enderecos?: Endereco[] = [];
 }
