@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UsuariolistComponent } from './usuariolist.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('UsuariolistComponent', () => {
   let component: UsuariolistComponent;
@@ -8,7 +10,11 @@ describe('UsuariolistComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UsuariolistComponent]
+      imports: [HttpClientTestingModule],
+      declarations: [UsuariolistComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
+      ]
     });
     fixture = TestBed.createComponent(UsuariolistComponent);
     component = fixture.componentInstance;

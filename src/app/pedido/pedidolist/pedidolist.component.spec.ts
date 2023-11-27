@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PedidolistComponent } from './pedidolist.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PedidolistComponent', () => {
   let component: PedidolistComponent;
@@ -8,7 +10,11 @@ describe('PedidolistComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PedidolistComponent]
+      imports: [HttpClientTestingModule],
+      declarations: [PedidolistComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
+      ]
     });
     fixture = TestBed.createComponent(PedidolistComponent);
     component = fixture.componentInstance;
