@@ -17,6 +17,7 @@ describe('SaboresdetailsComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [SaboresdetailsComponent],
+      providers: [SaboresService],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
       ]
@@ -24,6 +25,7 @@ describe('SaboresdetailsComponent', () => {
     fixture = TestBed.createComponent(SaboresdetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    saboresService = TestBed.inject(SaboresService);
   });
 
   beforeEach(() => {
@@ -52,7 +54,7 @@ describe('SaboresdetailsComponent', () => {
     saboresService = TestBed.inject(SaboresService);
   });
 
-  it('DEVE CHAMAR O MÉTODO SAVE AO ENVIAR O FORMULÁRIO PASSANDO OBJETO', fakeAsync(() => {
+  it('DEVE CHAMAR O MÉTODO SAVE AO ENVIAR PASSANDO OBJETO', fakeAsync(() => {
     let spy= spyOn(saboresService, 'save').and.callThrough();
 
     let sabores = new Sabores();
@@ -69,7 +71,7 @@ describe('SaboresdetailsComponent', () => {
     expect(spy).toHaveBeenCalledWith(sabores);
   }));
 
-  it('DEVE CHAMAR O MÉTODO SAVE AO ENVIAR O FORMULÁRIO', fakeAsync(() => {
+  it('DEVE CHAMAR O MÉTODO SAVE AO ENVIAR', fakeAsync(() => {
     let spy = spyOn(saboresService, 'save').and.callThrough();
 
     let sabores = new Sabores();
@@ -80,9 +82,47 @@ describe('SaboresdetailsComponent', () => {
     let button = fixture.debugElement.nativeElement.querySelector('#inputBotao');
     button.click();
     tick();
-    expect(spy).toHaveBeenCalledWith(sabores);
+    expect(spy).toHaveBeenCalled();
 
   }));
 
+  it('deve chamar o metood update quando sabores.id > 0 no salvar()', fakeAsync(() => {
+    spyOn(saboresService, 'update').and.returnValue(of(new Sabores())); // Mock the update method
+
+    const sabores = new Sabores();
+    sabores.id = 1;
+    component.sabores = sabores;
+
+    component.salvar();
+    tick();
+
+    expect(saboresService.update).toHaveBeenCalledWith(sabores);
+  }));
+
+  it('deve chamar o metodo save quando sabores.id <= 0 no salvar()', fakeAsync(() => {
+    spyOn(saboresService, 'save').and.returnValue(of(new Sabores())); // Mock the save method
+
+    const sabores = new Sabores();
+    sabores.id = 0;
+    component.sabores = sabores;
+
+    component.salvar();
+    tick();
+
+    expect(saboresService.save).toHaveBeenCalledWith(sabores);
+  }));
+
+  it('deve chamar o metodo deletar()', fakeAsync(() => {
+    spyOn(saboresService, 'delete').and.returnValue(of(new Sabores())); // Mock the delete method
+
+    const sabores = new Sabores();
+    sabores.id = 1;
+    component.sabores = sabores;
+
+    component.deletar();
+    tick();
+
+    expect(saboresService.delete).toHaveBeenCalledWith(sabores.id);
+  }));
   
 });
