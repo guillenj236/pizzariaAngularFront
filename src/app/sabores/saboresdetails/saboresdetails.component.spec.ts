@@ -4,7 +4,6 @@ import { SaboresdetailsComponent } from './saboresdetails.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SaboresService } from 'src/app/service/sabores.service';
 import { Sabores } from '../sabores';
-import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 describe('SaboresdetailsComponent', () => {
