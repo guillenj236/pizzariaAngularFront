@@ -3,10 +3,10 @@
     <br>
     <br>
     <p>Digite o nome do Produto:</p>
-    <input type="text" placeholder="Produto" class="inputClass" [(ngModel)]="estoqueProd.nomeProduto">
+    <input type="text" placeholder="Produto" name="inputEstoque" class="inputClass" [(ngModel)]="estoqueProd.nomeProduto">
     <br>
     <p>Digite o valor do Produto em R$:</p>
-    <input type="number" placeholder="Preço" class="inputClass" [(ngModel)]="estoqueProd.precoProdutos">
+    <input type="number" placeholder="Preço" class="inputClass" name="inputEstoquePreco" [(ngModel)]="estoqueProd.precoProdutos">
     <br>
     <input type="button" value="Adicionar" class="btn btn-dark" id="inputBotao" (click)="salvar()">
 </div>
